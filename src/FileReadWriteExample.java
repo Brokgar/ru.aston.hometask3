@@ -1,8 +1,18 @@
+import java.util.Scanner;
+
 public class FileReadWriteExample {
 
     public static void main(String[] args) {
 
-        String filename = "my_data.txt";
+        if (args.length > 0) {
+            System.out.println("Файл для записи: " + args[0]);
+        } else {
+            System.out.println("Введите имя файла для записи:");
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        String filename = scanner.nextLine() + ".txt";
+
         String dataToWrite = "Это тестовые данные для записи в файл.";
 
         try {
